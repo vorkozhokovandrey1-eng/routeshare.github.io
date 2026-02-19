@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Создавайте уникальные маршруты по вашему городу и делитесь ими с другими. Откройте новые места и поделитесь своими открытиями.">
+    <title>RouteShare - Уникальные маршруты по вашему городу</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">RouteShare</div>
+                <button class="cta-button nav-cta" onclick="scrollToForm()">Узнать первым</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Откройте свой город<br>
+                    <span class="gradient-text">по-новому</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Создавайте уникальные маршруты по интересным местам вашего города и делитесь ими с путешественниками. 
+                    Откройте скрытые бары, архитектурные жемчужины и особенные места, которые знают только местные.
+                </p>
+                <div class="hero-buttons">
+                    <button class="cta-button primary" onclick="scrollToForm()">
+                        Узнать первым
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="cta-button secondary" onclick="scrollToHowItWorks()">
+                        Как это работает
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="interestedCount">0</div>
+                        <div class="stat-label">уже заинтересованы</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="map-preview">
+                    <div class="map-marker marker-1"></div>
+                    <div class="map-marker marker-2"></div>
+                    <div class="map-marker marker-3"></div>
+                    <div class="route-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="section-content">
+                <div class="problem-box">
+                    <h2 class="section-title">Проблема</h2>
+                    <p class="section-text">
+                        Когда вы приезжаете в новый город или хотите открыть что-то новое в своём, 
+                        стандартные туристические маршруты часто скучны и предсказуемы. 
+                        А местные знают особенные места, но не всегда могут легко поделиться ими.
+                    </p>
+                </div>
+                <div class="solution-box">
+                    <h2 class="section-title">Решение</h2>
+                    <p class="section-text">
+                        RouteShare позволяет создавать персонализированные маршруты по самым интересным местам: 
+                        от скрытых баров до архитектурных шедевров. Делитесь своими открытиями и открывайте 
+                        уникальные маршруты от других пользователей.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title centered">Как это работает</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🗺️</div>
+                    <h3 class="step-title">Создайте маршрут</h3>
+                    <p class="step-description">
+                        Отметьте интересные места на карте вашего города: бары, кафе, 
+                        архитектурные объекты или любые другие локации
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">✍️</div>
+                    <h3 class="step-title">Добавьте описание</h3>
+                    <p class="step-description">
+                        Расскажите историю каждого места, добавьте фото и советы. 
+                        Что делает это место особенным?
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🚀</div>
+                    <h3 class="step-title">Поделитесь</h3>
+                    <p class="step-description">
+                        Опубликуйте свой маршрут и поделитесь им с друзьями или 
+                        сделайте доступным для всех пользователей
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">👥</div>
+                    <h3 class="step-title">Откройте новые места</h3>
+                    <p class="step-description">
+                        Исследуйте маршруты от других пользователей и открывайте 
+                        уникальные места в своём городе или в путешествиях
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title centered">Почему RouteShare?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3 class="benefit-title">Персонализированные маршруты</h3>
+                    <p class="benefit-text">
+                        Создавайте маршруты под свои интересы: от баров для вечера пятницы 
+                        до архитектурных туров
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌍</div>
+                    <h3 class="benefit-title">Откройте свой город</h3>
+                    <p class="benefit-text">
+                        Даже в родном городе вы найдёте места, о которых не знали. 
+                        Откройте его заново глазами местных экспертов
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3 class="benefit-title">Сообщество единомышленников</h3>
+                    <p class="benefit-text">
+                        Обменивайтесь опытом с путешественниками и местными жителями, 
+                        которые знают лучшие места
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📍</div>
+                    <h3 class="benefit-title">Легко и удобно</h3>
+                    <p class="benefit-text">
+                        Простой интерфейс для создания маршрутов и навигация по ним 
+                        прямо в приложении
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases">
+        <div class="container">
+            <h2 class="section-title centered">Примеры использования</h2>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-emoji">🍺</div>
+                    <h3 class="case-title">Бары для вечера пятницы</h3>
+                    <p class="case-description">
+                        Маршрут по лучшим барам города с описанием атмосферы каждого места
+                    </p>
+                </div>
+                <div class="case-card">
+                    <div class="case-emoji">🏛️</div>
+                    <h3 class="case-title">Архитектурные жемчужины</h3>
+                    <p class="case-description">
+                        Откройте скрытые архитектурные шедевры и узнайте их историю
+                    </p>
+                </div>
+                <div class="case-card">
+                    <div class="case-emoji">☕</div>
+                    <h3 class="case-title">Скрытые кофейни</h3>
+                    <p class="case-description">
+                        Найдите уютные кофейни вдали от туристических троп
+                    </p>
+                </div>
+                <div class="case-card">
+                    <div class="case-emoji">🌆</div>
+                    <h3 class="case-title">Лучшие виды города</h3>
+                    <p class="case-description">
+                        Маршрут по местам с самыми красивыми панорамами и видами
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section" id="contact-form">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-content">
+                    <h2 class="form-title">Узнайте первыми о запуске</h2>
+                    <p class="form-subtitle">
+                        Заполните форму, и мы сообщим вам, когда приложение будет готово. 
+                        Вы получите ранний доступ и специальные возможности.
+                    </p>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="your@email.com" 
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Ваш город (опционально)</label>
+                            <input 
+                                type="text" 
+                                id="city" 
+                                name="city" 
+                                placeholder="Москва, Санкт-Петербург..."
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">Что вас больше всего интересует?</label>
+                            <select id="interest" name="interest">
+                                <option value="">Выберите вариант</option>
+                                <option value="create">Создавать маршруты</option>
+                                <option value="explore">Исследовать маршруты других</option>
+                                <option value="both">И то, и другое</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="cta-button primary form-submit">
+                            Узнать первым
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                    <div id="formSuccess" class="form-success hidden">
+                        <div class="success-icon">✓</div>
+                        <h3>Спасибо за интерес!</h3>
+                        <p>Мы свяжемся с вами, как только приложение будет готово.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title centered">Часто задаваемые вопросы</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Когда планируется запуск приложения?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Мы работаем над приложением и планируем запуск в ближайшие месяцы. 
+                        Подпишитесь на обновления, чтобы узнать первыми!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Будет ли приложение бесплатным?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Базовый функционал будет бесплатным. Мы планируем добавить премиум-функции 
+                        для продвинутых пользователей, но основная возможность создавать и исследовать 
+                        маршруты останется бесплатной.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>На каких платформах будет доступно приложение?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Изначально планируется запуск для iOS и Android. В дальнейшем мы рассмотрим 
+                        возможность веб-версии.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Можно ли использовать маршруты офлайн?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, мы планируем добавить возможность сохранения маршрутов для офлайн-использования, 
+                        чтобы вы могли исследовать город даже без интернета.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">RouteShare</div>
+                    <p class="footer-text">
+                        Откройте свой город по-новому. Создавайте и исследуйте уникальные маршруты.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Продукт</h4>
+                        <a href="#how-it-works" class="footer-link">Как это работает</a>
+                        <a href="#contact-form" class="footer-link">Узнать первым</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Контакты</h4>
+                        <a href="mailto:hello@routeshare.app" class="footer-link">hello@routeshare.app</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RouteShare. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
